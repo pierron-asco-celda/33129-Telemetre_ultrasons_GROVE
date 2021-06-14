@@ -30,7 +30,7 @@ Pour l’utilisation de ce module référez-vous aux indications présentes sur 
 
 # RESSOURCES À TÉLÉCHARGER :
 
-Ressource utilisation : [NU40C16T-R-1](https://github.com/pierron-asco-celda/33132-Haut-parleur_Amplificateur_GROVE/blob/main/src/Datasheet_LM386.pdf)
+Ressource utilisation : [NU40C16T-R-1](https://github.com/pierron-asco-celda/33129-Telemetre_ultrasons_GROVE/blob/main/src/Datasheet_NU40C16T-R-1.pdf)
 
 # Exemple :
 ### Arduino / C++
