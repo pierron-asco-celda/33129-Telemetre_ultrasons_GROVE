@@ -36,7 +36,7 @@ Ressource utilisation : [NU40C16T-R-1](https://github.com/pierron-asco-celda/331
 ### Arduino / C++
 ```cpp
 /*
-    ** Mesure ultrason (1 à 500 cm) module Grove **
+    ** Mesure ultrason (1 à plus de 350 cm) module Grove **
        PIN 7 Module shield GROVE
        Moniteur série -> Baud rate 9600.
        Utilisation bibliothèque seed_arduino_ultrasonicranger-master 
