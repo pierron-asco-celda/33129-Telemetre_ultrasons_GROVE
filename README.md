@@ -38,7 +38,7 @@ Ressource utilisation : [NU40C16T-R-1](https://github.com/pierron-asco-celda/331
 /*
     ** Mesure ultrason (2 à plus de 350 cm) module Grove **
        PIN 7 Module shield GROVE
-       Moniteur série -> Baud rate 9600.
+       Moniteur série -> Baud rate 9600.*
        Utilisation bibliothèque seed_arduino_ultrasonicranger-master 
 */
 
@@ -124,5 +124,6 @@ void loop()
 ![C-33103+33129](/img/C-33103+33129.jpg)
 
 ## À propos :
-
+<div style="text-align: justify">*Le débit en bauds est un taux de transfert de données en unités de bits par seconde (bps). Si le débit en bauds est de 9600, cela signifie que la possibilité d’envoyer des données est de 9600 bits en une seconde. 1 caractère est identique à 1 octet.</div>
+<br>
 PIERRON ASCO-CELDA (https://www.pierron.fr).
