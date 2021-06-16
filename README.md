@@ -32,11 +32,11 @@ Pour l’utilisation de ce module référez-vous aux indications présentes sur 
 
 Ressource utilisation : [NU40C16T-R-1](https://github.com/pierron-asco-celda/33129-Telemetre_ultrasons_GROVE/blob/main/src/Datasheet_NU40C16T-R-1.pdf)
 
-# Exemple :
+# Exemples :
 ### Arduino / C++
 ```cpp
 /*
-    ** Mesure ultrason (1 à plus de 350 cm) module Grove **
+    ** Mesure ultrason (2 à plus de 350 cm) module Grove **
        PIN 7 Module shield GROVE
        Moniteur série -> Baud rate 9600.
        Utilisation bibliothèque seed_arduino_ultrasonicranger-master 
@@ -52,7 +52,6 @@ void setup()
 }
 void loop()
 {
-    long RangeInInches;
     long RangeInCentimeters;
  
     Serial.println("Distance : "); 
@@ -62,6 +61,68 @@ void loop()
     delay(250);
 }
 ```
+### Arduino / C++
+<br>
+
+Afficheur I2C GROVE [33103](https://www.pierron.fr/interface-arduino-uno-5944.html)
+
+![L-33103](/img/L-33103.jpg)
+
+```cpp
+/*
+    ** Mesure ultrason (2 à plus de 350 cm) module Grove **
+    ** Affichage mesure sur afficheur GROVE I2C **
+       PIN 7 Module shield GROVE ultrason
+       PIN I2C Module shield GROVE afficheur 
+       Utilisation bibliothèque Ultrasonic.h & rgb_lcd.h
+*/
+
+#include <Wire.h>
+#include "rgb_lcd.h"
+#include "Ultrasonic.h"
+rgb_lcd lcd;
+long lDis = 0;
+
+Ultrasonic ultrasonic(7);
+void setup()
+{
+  lcd.begin(16, 2);
+  lcd.clear();
+  lcd.setCursor(4, 0);
+  lcd.print("PIERRON");
+  delay(1000);
+  lcd.setCursor(2, 0);
+  lcd.print("Telemetre a ");
+  lcd.setCursor(3, 1);
+  lcd.print("ultrasons");
+  delay(1500);
+  lcd.clear();
+}
+void loop()
+{
+  long RangeInCentimeters;
+  RangeInCentimeters = ultrasonic.MeasureInCentimeters();
+  lDis = RangeInCentimeters;
+
+  lcd.setCursor(0, 0);
+  lcd.print("Distance : ");
+  lcd.print(lDis);
+  lcd.print("cm");
+
+  if ((lDis > 350) || (lDis < 2 )) {
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("~ERREUR MESURE !");
+    lcd.setCursor(3, 1);
+    lcd.print("2cm a 3.5m");
+  }
+
+  delay(250);
+  lcd.clear();
+}
+```
+![C-33103+33129](/img/C-33103+33129.jpg)
+
 ## À propos :
 
 PIERRON ASCO-CELDA (https://www.pierron.fr).
